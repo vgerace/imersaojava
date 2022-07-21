@@ -26,5 +26,5 @@ $ git clone https://github.com/vgerace/imersaojava/
 $ cd ImersaoJava
 
 # Execute o comando abaixo para startar o app
-$ npm run dev
+$ java -jar ...
 ```
