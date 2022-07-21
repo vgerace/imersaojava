@@ -1,4 +1,4 @@
-### :large_blue_diamond: Rocket Q 
+### :large_blue_diamond: Imersão Java
 Imersão Java é uma projeto idealizado com o apoio da [Alura](https://www.alura.com.br/).
 
 ---
