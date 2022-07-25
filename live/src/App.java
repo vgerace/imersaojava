@@ -22,5 +22,6 @@ public class App {
     //imprimir o JSON
 
     System.out.println(json);
+    System.out.println(json.isEmpty());
   }
 }
