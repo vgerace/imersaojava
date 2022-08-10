@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -31,9 +33,19 @@ public class App {
     System.out.println(listaDeFilmes.size());
     System.out.println(listaDeFilmes.get(0));
     //  Exibir e manipular os dados
+    var geradora = new GeradoraDeFigurinhas();
+    
     for (Map<String, String> filme : listaDeFilmes) {
+      String urlImagem = filme.get("image");
+      String titulo = filme.get("title");
+      InputStream inputStream = new URL(urlImagem).openStream();
+
+      String nomeArquivo = titulo + ".png";
+      
+      geradora.cria(inputStream, nomeArquivo);
+
       System.out.println(
-        "\u001b[43m\u001b[1m📽️  Título: \u001b[m \u001b[1m \u001b[m" +
+        "\u001b[43m\u001b[1m📽️  Título: 📽️\u001b[m \u001b[1m \u001b[m" +
         "\u001b[1m" +
         filme.get("title")
       );
@@ -43,7 +55,7 @@ public class App {
         filme.get("image")
       );
       System.out.println(
-        "\u001b[41m\u001b[1m🌟 Classificação: \u001b[m \u001b[1m \u001b[m" +
+        "\u001b[41m\u001b[1m🌟 Classificação: 🌟\u001b[m \u001b[1m \u001b[m" +
         "\u001b[1m" +
         filme.get("imDbRating")
       );
